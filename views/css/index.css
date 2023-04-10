@@ -1,0 +1,17 @@
+body{
+    font-family: "ubuntu";
+    color:white;
+    background-color:  rgb(99, 99, 241);
+}
+.formulaire{
+    padding-top: 150px;
+}
+
+h1{
+    font-weight: 500;
+    color: white;
+}
+
+.btn-primary{
+    background-color: rgb(155, 155, 238);
+}
