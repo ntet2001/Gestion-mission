@@ -42,8 +42,8 @@ class Mission {
         $datas["annexe"] =  $this->annexe;
         $datas["descriptions"] =  $this->descriptions;
         $datas["statut"] =  $this->statut;
-        $datas["rapportid"] =  $this->rapportid;
-        $datas["employeid"] =  $this->employeid;
+        $datas["rapportId"] =  $this->rapportid;
+        $datas["employeId"] =  $this->employeid;
 
         return $datas;
     }

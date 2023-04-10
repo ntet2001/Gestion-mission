@@ -21,8 +21,7 @@ header("Content-type: application/json; charset=UTF-8");
  */
 $parts = explode ("/",$_SERVER['REQUEST_URI']); 
 $id = $parts[3];
-$service = $parts[4];
-$valeurService = $parts[5];
+
 
 /**
  * Here we verified that is the route "missions" that is call with status or repport
@@ -46,4 +45,4 @@ $database->getConnection();
  * in input here i pass :
  * The server method, the id, the service
  */
-print_r($controller->processRequest($_SERVER["REQUEST_METHOD"],$id,$service,$valeurService));
+print_r($controller->processRequest($_SERVER["REQUEST_METHOD"],$id));
