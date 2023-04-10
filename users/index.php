@@ -26,7 +26,7 @@ $id = $parts[3];
  * Here we verified that is the route "missions" that is call with status or repport
  * And we return a status code of 404 if it's not the case
  */
-if ($parts[2] != "employes"){
+if ($parts[2] != "users"){
     http_response_code(404);
     exit;
 } 
@@ -35,7 +35,7 @@ if ($parts[2] != "employes"){
 $database = new Database("localhost","gestion_mission","root","");
 
 //here is my controller and i pass in input the database connection
-$controller = new EmployeController($database);
+$controller = new UsersController($database);
 
 $database->getConnection();
 
@@ -44,4 +44,4 @@ $database->getConnection();
  * in input here i pass :
  * The server method, the id, the service
  */
-print_r($controller->processRequest($_SERVER["REQUEST_METHOD"],$id));
+print_r($controller->processRequest($_SERVER["REQUEST_METHOD"]));
