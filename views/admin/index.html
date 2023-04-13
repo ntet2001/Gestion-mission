@@ -139,42 +139,40 @@
                                     <div class="">
                                         <label for="titre" class="form-label">Titre de Mission</label>
                                         <div class="">
-                                            <select class="form-control" name="titre">
-                                                <option value=""></option>
-                                            </select>
+                                            <select class="form-control" id="titre2"></select>
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="lieu" class="form-label">Lieu</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="lieu">
+                                        <input type="text" class="form-control" id="lieu2">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="dateMission" class="form-label">Date de Mission</label>
                                         <div class="">
-                                        <input type="date" class="form-control" name="dateMission">
+                                        <input type="date" class="form-control" id="dateMission2">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="annexe" class="form-label">Annexe de Mission</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="annexe">
+                                        <input type="text" class="form-control" id="annexe2">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="descriptions" class="form-label">Description Mission</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="descriptions">
+                                        <input type="text" class="form-control" id="descriptions2">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="employe" class="form-label">Choisir L'employe</label>
                                         <div class="">
-                                        <select class="form-control" id="employe1"></select>
+                                        <select class="form-control" id="employe2"></select>
                                         </div>
                                     </div><br>
-                                    <span class="message"></span>
+                                    <span id="message2"></span>
                                     <button class="btn btn-primary" type="submit" id="modifier">Modifier</button>
                                 </form>
                             </div>
@@ -226,7 +224,7 @@
                                         </div>
                                     </div><br>
                                     <span class="message"></span>
-                                    <button class="btn btn-primary" type="submit" id="enrgistrer">Enregistrer</button>
+                                    <button class="btn btn-danger" type="submit" id="supprimer">Supprimer</button>
                                 </form>
                             </div>
                         </div>
@@ -326,6 +324,9 @@
     <script defer src="../js/logique.js"></script>
     <script defer src="../js/employe.js"></script>
     <script defer src="../js/ajout.js"></script>
+    <script defer src="../js/modif.js"></script>
+    <script defer src="../js/modifemploye.js"></script>
+    <script defer src="../js/mission.js"></script>
     <script src="../js/bootstrap.js"></script>
 </body>
 </html>
