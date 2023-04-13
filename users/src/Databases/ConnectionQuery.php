@@ -19,7 +19,7 @@ class ConnectionQuery
      */
     public function getAllUsers () : array
     {
-        $query = "SELECT * FROM user"; // this is the sql query
+        $query = "SELECT * FROM utilisateur"; // this is the sql query
         $datas = [];
 
         $statement = $this->conn->query($query);

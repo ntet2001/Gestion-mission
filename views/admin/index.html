@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/jquery.js"></script>
     <title></title>
 </head>
 <body>
@@ -49,7 +50,7 @@
                       </svg> Deconnexion</a>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col-8">
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <h3>Bienvenu sur votre application de gestion des missions</h3>
@@ -62,35 +63,23 @@
                     <div class="tab-pane fade " id="v-pills-listemission" role="tabpanel" aria-labelledby="v-pills-listemission-tab">
                         <h3>Liste des missions</h3><br>
                         <div class="row">
-                            <div class="col-6 contenu">
-                                <table class="table table-bordered">
+                            <div class="col-6 contenu" id="table">
+                                <table class="table table-hover table-bordered">
                                     <thead>
                                       <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">lieu</th>
+                                        <th scope="col">date de mission</th>
+                                        <th scope="col">titre</th>
+                                        <th scope="col">annexe</th>
+                                        <th scope="col">descriptions</th>
+                                        <th scope="col">statut</th>
+                                        <th scope="col">rapport</th>
+                                        <th scope="col">employe</th>
+                                        <th scope="col">Date mise a jour</th>
                                       </tr>
                                     </thead>
-                                    <tbody>
-                                      <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                      </tr>
-                                    </tbody>
+                                    <tbody id="consulter"></tbody>
                                   </table>
                             </div>
                         </div>
@@ -103,42 +92,40 @@
                                     <div class="">
                                         <label for="lieu" class="form-label">Lieu</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="lieu">
+                                        <input type="text" class="form-control" id="lieu1">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="dateMission" class="form-label">Date de Mission</label>
                                         <div class="">
-                                        <input type="date" class="form-control" name="dateMission">
+                                        <input type="date" class="form-control" id="dateMission1">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="titre" class="form-label">Titre de Mission</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="titre">
+                                        <input type="text" class="form-control" id="titre1">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="annexe" class="form-label">Annexe de Mission</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="annexe">
+                                        <input type="text" class="form-control" id="annexe1">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="descriptions" class="form-label">Description Mission</label>
                                         <div class="">
-                                        <input type="text" class="form-control" name="descriptions">
+                                        <input type="text" class="form-control" id="descriptions1">
                                         </div>
                                     </div>
                                     <div class="">
                                         <label for="employe" class="form-label">Choisir L'employe</label>
                                         <div class="">
-                                        <select class="form-control" name="employe">
-                                            <option value=""></option>
-                                        </select>
+                                            <select class="form-control" id="employe1"></select>
                                         </div>
-                                    </div><br>
-                                    <span class="message"></span>
+                                    </div>
+                                    <span id="message1"></span><br><br>
                                     <button class="btn btn-primary" type="submit" id="enrgistrer">Enregistrer</button>
                                 </form>
                             </div>
@@ -148,7 +135,7 @@
                         <div class="row">
                             <div class="col-7 formulaire" >
                                 <h3>Modifier mission</h3>
-                                <form action="./" method="post" autocomplete="off" class="contact-form">
+                                <form id="form1" action="./" method="post" autocomplete="off" class="contact-form">
                                     <div class="">
                                         <label for="titre" class="form-label">Titre de Mission</label>
                                         <div class="">
@@ -184,9 +171,7 @@
                                     <div class="">
                                         <label for="employe" class="form-label">Choisir L'employe</label>
                                         <div class="">
-                                        <select class="form-control" name="employe">
-                                            <option value=""></option>
-                                        </select>
+                                        <select class="form-control" id="employe1"></select>
                                         </div>
                                     </div><br>
                                     <span class="message"></span>
@@ -337,11 +322,10 @@
 
 
     <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/bootstrap.bundle.js.map"></script>
-    <script src="../js/bootstrap.js.map"></script>
-    <script src="../js/jquery.js"></script>
     <script src="../js/popper.js"></script>
-    <script src="../js/admin.js"></script>
+    <script defer src="../js/logique.js"></script>
+    <script defer src="../js/employe.js"></script>
+    <script defer src="../js/ajout.js"></script>
     <script src="../js/bootstrap.js"></script>
 </body>
 </html>

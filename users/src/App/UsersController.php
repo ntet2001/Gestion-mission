@@ -23,10 +23,10 @@ class UsersController
                 $datas = (array) json_decode(file_get_contents('php://input',true));
                 // condition pour verifier si les donnees en entrer ne sont pas null
 
-                if ($datas["login"] == "" || $datas["pass"]){
+                if ($datas["login"] == "" || $datas["pass"] == ""){
 
                     http_response_code(405);
-                    echo json_encode(["error" => "les donnees ne doivent pas etre null"]);
+                    echo json_encode(["message" => "les donnees ne doivent pas etre null"]);
                 }else{
 
                     $users = $this->query->getAllUsers();
@@ -34,6 +34,10 @@ class UsersController
                         
                         if ($value["login"] == $datas["login"] && $value["pass"] == $datas["pass"] ) {
                             echo json_encode(["message" => "connecter"]);
+                            http_response_code(200);
+                        }else{
+                            echo json_encode(["message" => "identifiant incorrect"]);
+                            http_response_code(405);
                         }
                     }
                 }

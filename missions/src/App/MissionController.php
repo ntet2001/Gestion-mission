@@ -45,7 +45,7 @@ class MissionController
                 if ($datas["lieu"] == "" || $datas["dateMission"] == "" || $datas["titre"] == "" || $datas["annexe"] == "" || $datas["descriptions"] == "" || $datas["employeId"] == ""){
 
                     http_response_code(405);
-                    echo json_encode(["error" => "les donnees ne doivent pas etre null"]);
+                    echo json_encode(["message" => "les donnees ne doivent pas etre null"]);
                 }else{
 
                     $mission = new Mission($datas["lieu"],$datas["dateMission"],$datas["titre"],$datas["annexe"],$datas["descriptions"],null,null,$datas["employeId"]);
@@ -83,7 +83,7 @@ class MissionController
                         if (is_numeric($valeurService) && ($valeurService == 0 || $valeurService == 1)) {
                             echo json_encode(["message" => "statut changer","id" => $this->query->updateStatutMission($valeurService,$id)]);
                         }else{
-                            echo json_encode(["erreur" => "le statut doit etre 0 ou 1"]);
+                            echo json_encode(["message" => "le statut doit etre 0 ou 1"]);
                         }
                         
                     break;
@@ -92,13 +92,13 @@ class MissionController
                         if (is_numeric($valeurService)) {
                             echo json_encode(["message" => "rapport ajouter","id" => $this->query->updateRapportMission($valeurService,$id)]);
                         }else{
-                            echo json_encode(["erreur" => "l'id du rapport doit etre un nombre"]);
+                            echo json_encode(["message" => "l'id du rapport doit etre un nombre"]);
                         }
                     break;
 
                     default:
                         http_response_code(405);
-                        echo json_encode(["error" => "Allow services statut and rapport only"]);
+                        echo json_encode(["message" => "Allow services statut and rapport only"]);
                         header("Allow services statut and rapport only");
                     break;
                 }
@@ -127,14 +127,14 @@ class MissionController
                 if ($datas["lieu"] == "" || $datas["dateMission"] == "" || $datas["titre"] == "" || $datas["annexe"] == "" || $datas["descriptions"] == "" || $datas["employeId"] == ""){
 
                     http_response_code(405);
-                    echo json_encode(["error" => "les donnees ne doivent pas etre null"]);
+                    echo json_encode(["message" => "les donnees ne doivent pas etre null"]);
                 }else{
 
                     $missions = $this->query->getAllMissions();
                     foreach ($missions as $key => $value) {
                        
                         if ($value["employeId"] == $datas["employeId"] ) {
-                            echo json_encode(["message" => "l'utilisateur existe deja"]);
+                            echo json_encode(["message" => "l'employe est deja assigner a une mission"]);
                             http_response_code(405);
                             exit;
                         }
